@@ -31,6 +31,3 @@ class BasePage:
         unique_src = self.find_element(
             BasePageLocators.FIRST_POSTED_POST_SCR_LOCATOR).get_attribute("src")
         return unique_src
-
-    def if_post_available(self, post_src: str):
-        pass

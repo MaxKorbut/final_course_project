@@ -11,9 +11,6 @@ def browser():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=chrome_options)
-    # driver = webdriver.Chrome()
-    # driver.maximize_window()
-    # driver.implicitly_wait(10)
     driver.get("http://localhost:8000/")
     yield driver
     driver.quit()
@@ -41,3 +38,16 @@ def get_data_for_add_user():
     new_user_name = user_data["username"]
     new_user_passwd = user_data["passwd"]
     return new_user_name, new_user_passwd
+
+
+@pytest.fixture()
+def get_data_to_add_pet():
+    new_pet_json = load_config("resources/variables/data_to_add_new_pet.json")
+    return new_pet_json
+
+
+@pytest.fixture()
+def get_data_to_update_pet():
+    update_pet_json = load_config(
+        "resources/variables/data_to_update_pet.json")
+    return update_pet_json
