@@ -8,7 +8,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def find_element(self, locator: tuple, time=15):
+    def find_element(self, locator: tuple, time=10):
         return WebDriverWait(self.driver, time).until(
             EC.presence_of_element_located(locator),
             message=f"Can not find element {locator}"

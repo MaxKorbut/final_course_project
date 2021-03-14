@@ -12,7 +12,7 @@ def browser():
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=chrome_options)
     # driver = webdriver.Chrome()
-    driver.maximize_window()
+    # driver.maximize_window()
     # driver.implicitly_wait(10)
     driver.get("http://localhost:8000/")
     yield driver

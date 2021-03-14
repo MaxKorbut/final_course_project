@@ -26,7 +26,17 @@ class AdminPage(BasePage):
             AdminPageLocators.SITE_ADMIN_TEXT_LOCATOR)
         assert site_admin_text.text == "Site administration"
 
-    def do_something_on_top_toolbar(self, need_page):
+    def go_to_something_page_from_top_toolbar(self, need_page):
         view_site_button = self.find_element(
-            AdminPageLocators.get_header_toolbar_locator(need_page))
+            AdminPageLocators.GET_HEADER_TOOLBAR_LOCATOR(need_page))
         view_site_button.click()
+
+    def is_login_successful(self, username: str):
+        username_text = self.find_element(
+            AdminPageLocators.USERNAME_IN_HEADER_LOCATOR)
+        assert username_text.text.upper() == username.upper()
+
+    def go_to_page_from_auth_app_block(self, page_name: str):
+        users_button = self.find_element(
+            AdminPageLocators.GET_LOCATOR_BUTTON_FROM_APP_AUTH(page_name))
+        users_button.click()

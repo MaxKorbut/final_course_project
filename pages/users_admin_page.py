@@ -4,11 +4,6 @@ from locators.users_admin_page_locators import UsersAdminPageLocators
 
 class UsersAdminPage(AdminPage):
 
-    def go_to_users_page(self):
-        users_button = self.find_element(
-            UsersAdminPageLocators.USERS_BUTTON_LOCATOR)
-        users_button.click()
-
     def add_new_user(self, username, passwd):
         add_user_button = self.find_element(
             UsersAdminPageLocators.ADD_USER_BUTTON_LOCATOR)
@@ -35,3 +30,16 @@ class UsersAdminPage(AdminPage):
         assert confirm_text.text == f'The user “{username}” was added ' \
                                     f'successfully. ' \
                                     f'You may edit it again below.'
+
+    def go_to_some_user_page(self, username):
+        user_button = self.find_element(
+            UsersAdminPageLocators.GO_TO_USER_PAGE_LOCATOR(username))
+        user_button.click()
+
+    def give_staff_status_to_user(self):
+        give_status_button = self.find_element(
+            UsersAdminPageLocators.STAFF_STATUS_BUTTON_LOCATOR)
+        give_status_button.click()
+        save_button = self.find_element(
+            UsersAdminPageLocators.SAVE_BUTTON_USER_PAGE_LOCATOR)
+        save_button.click()
