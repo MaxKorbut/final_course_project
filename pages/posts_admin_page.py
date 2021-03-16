@@ -5,15 +5,10 @@ from selenium.webdriver.support.ui import Select
 
 class PostsAdminPage(AdminPage):
 
-    def go_to_posts_page(self):
-        posts_button = self.find_element(
-            PostsAdminPageLocators.POSTS_BUTTON_LOCATOR)
-        posts_button.click()
-
-    def delete_first_posted_post(self):
-        select_last_post_button = self.find_element(
-            PostsAdminPageLocators.FIRST_POSTED_POST_SELECT_LOCATOR)
-        select_last_post_button.click()
+    def delete_first_created_post(self):
+        select_first_created_post_checkbox = self.find_element(
+            PostsAdminPageLocators.FIRST_CREATED_POST_CHECKBOX_LOCATOR)
+        select_first_created_post_checkbox.click()
 
         select_action_element = Select(self.find_element(
             PostsAdminPageLocators.SELECT_ACTION_LOCATOR))

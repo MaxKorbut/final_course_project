@@ -33,13 +33,13 @@ class UsersAdminPage(AdminPage):
 
     def go_to_some_user_page(self, username):
         user_button = self.find_element(
-            UsersAdminPageLocators.GO_TO_USER_PAGE_LOCATOR(username))
+            UsersAdminPageLocators.GO_TO_USER_PAGE_BUTTON_LOCATOR(username))
         user_button.click()
 
-    def give_staff_status_to_user(self):
-        give_status_button = self.find_element(
-            UsersAdminPageLocators.STAFF_STATUS_BUTTON_LOCATOR)
-        give_status_button.click()
+    def set_staff_status_to_user(self):
+        staff_status_checkbox = self.find_element(
+            UsersAdminPageLocators.STAFF_STATUS_CHECKBOX_LOCATOR)
+        staff_status_checkbox.click()
         save_button = self.find_element(
-            UsersAdminPageLocators.SAVE_BUTTON_USER_PAGE_LOCATOR)
+            UsersAdminPageLocators.SAVE_USER_BUTTON_LOCATOR)
         save_button.click()

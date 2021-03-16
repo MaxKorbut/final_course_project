@@ -7,8 +7,8 @@ class PetApiPage:
     def __init__(self):
         self.url = "https://petstore.swagger.io/v2/pet"
 
-    def add_new_pet_to_market(self, new_pet_json_data):
-        response = requests.post(self.url, json=new_pet_json_data)
+    def add_new_pet_to_market(self, new_pet_json):
+        response = requests.post(self.url, json=new_pet_json)
         assert response.status_code == 200
 
     def check_if_pet_in_market(self, pet_id):

@@ -6,10 +6,10 @@ class AdminPage(BasePage):
 
     def open_admin_login_page(self):
         go_to_admin_button = self.find_element(
-            AdminPageLocators.GO_TO_ADMIN_BUTTON_LOCATOR)
+            AdminPageLocators.ADMIN_BUTTON_LOCATOR)
         go_to_admin_button.click()
 
-    def fill_login_form(self, username_value, passwd_value):
+    def login(self, username: str, passwd: str):
         username_field = self.find_element(
             AdminPageLocators.USERNAME_FIELD_LOCATOR)
         passwd_field = self.find_element(
@@ -17,8 +17,8 @@ class AdminPage(BasePage):
         login_button = self.find_element(
             AdminPageLocators.LOG_IN_BUTTON_LOCATOR)
 
-        username_field.send_keys(username_value)
-        passwd_field.send_keys(passwd_value)
+        username_field.send_keys(username)
+        passwd_field.send_keys(passwd)
         login_button.click()
 
     def should_be_admin_page(self):
@@ -26,9 +26,9 @@ class AdminPage(BasePage):
             AdminPageLocators.SITE_ADMIN_TEXT_LOCATOR)
         assert site_admin_text.text == "Site administration"
 
-    def go_to_something_page_from_top_toolbar(self, need_page):
+    def click_on_button_from_top_toolbar(self, need_button):
         view_site_button = self.find_element(
-            AdminPageLocators.GET_HEADER_TOOLBAR_LOCATOR(need_page))
+            AdminPageLocators.TOP_TOOLBAR_BUTTON_LOCATOR(need_button))
         view_site_button.click()
 
     def is_login_successful(self, username: str):
@@ -36,7 +36,7 @@ class AdminPage(BasePage):
             AdminPageLocators.USERNAME_IN_HEADER_LOCATOR)
         assert username_text.text.upper() == username.upper()
 
-    def go_to_page_from_auth_app_block(self, page_name: str):
+    def click_on_button_from_left_admin_page_block(self, button_name: str):
         users_button = self.find_element(
-            AdminPageLocators.GET_LOCATOR_BUTTON_FROM_APP_AUTH(page_name))
+            AdminPageLocators.LOCATOR_BUTTON_FROM_LEFT_BLOCK(button_name))
         users_button.click()

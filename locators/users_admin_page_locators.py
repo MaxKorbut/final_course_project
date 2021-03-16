@@ -14,12 +14,12 @@ class UsersAdminPageLocators:
     ADD_USER_CONFIRM_TEXT_LOCATOR = (By.XPATH, '//li[@class="success"]')
 
     @staticmethod
-    def GO_TO_USER_PAGE_LOCATOR(username: str):
+    def GO_TO_USER_PAGE_BUTTON_LOCATOR(username: str):
         go_username_locator = (By.XPATH, f'//form[@id="changelist-form"]'
                                          f'//tr//a[text()="{username}"]')
         return go_username_locator
 
-    STAFF_STATUS_BUTTON_LOCATOR = (By.XPATH, '//div[@class="form-row '
+    STAFF_STATUS_CHECKBOX_LOCATOR = (By.XPATH, '//div[@class="form-row '
                                              'field-is_staff"]//input')
-    SAVE_BUTTON_USER_PAGE_LOCATOR = (By.XPATH, '//div[@class="submit-row"]'
+    SAVE_USER_BUTTON_LOCATOR = (By.XPATH, '//div[@class="submit-row"]'
                                                '//input[@value="Save"]')
