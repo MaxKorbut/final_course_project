@@ -1,4 +1,4 @@
-You can see the wep-app following the link "link"
+You can see the wep-app following the link: "https://github.com/thejungwon/docker-webapp-django.git"
 
 Test cases description:
 
