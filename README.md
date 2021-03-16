@@ -1,10 +1,12 @@
+You can see the wep-app following the link: "https://github.com/thejungwon/docker-webapp-django.git"
+
 Test cases description:
 
 1. Test case 1:
   1) Open app
   2) Log in as admin
   3) Create new user
-  4) Check that create is successful !!!!
+  4) Check that create is successful
   5) Log out from app
   6) Log in as new user
   7) Check that log in by new user is successful
@@ -20,4 +22,4 @@ Test cases description:
   1) Add new pet to market
   2) Check that pet is added successfully
   3) Rename new pet
-  4) Check that pet was renamed
+  4) Check that pet was renamed successfully
