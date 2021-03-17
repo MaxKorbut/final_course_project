@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 import os.path
 import json
+import psycopg2
 
 
 @pytest.fixture()
@@ -51,3 +52,17 @@ def get_data_to_update_pet():
     update_pet_json = load_config(
         "resources/variables/data_to_update_pet.json")
     return update_pet_json
+
+
+@pytest.fixture()
+def db_cursor():
+    connect = psycopg2.connect(
+        dbname='postgres',
+        user='postgres',
+        password='postgres',
+        host='172.18.0.3',
+        port='5432'
+    )
+    cursor = connect.cursor()
+    yield cursor
+    connect.close()

@@ -1,17 +1,7 @@
-import psycopg2
-
-
 class DataBase:
 
-    def __init__(self):
-        self.conn = psycopg2.connect(
-            dbname='postgres',
-            user='postgres',
-            password='postgres',
-            host='172.18.0.2',
-            port='5432'
-        )
-        self.cursor = self.conn.cursor()
+    def __init__(self, cursor):
+        self.cursor = cursor
 
     def get_all_table(self):
         self.cursor.execute("SELECT * FROM pg_catalog.pg_tables")
