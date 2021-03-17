@@ -8,7 +8,7 @@ class DataBase:
             dbname='postgres',
             user='postgres',
             password='postgres',
-            host='172.18.0.4')
+            host='localhost')
         self.cursor = self.conn.cursor()
 
     def get_all_table(self):
