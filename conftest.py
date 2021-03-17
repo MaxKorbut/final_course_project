@@ -11,7 +11,7 @@ def browser():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=chrome_options)
-    driver.get("http://localhost:8000/")
+    driver.get("http://172.18.0.4:8000/")
     yield driver
     driver.quit()
 
