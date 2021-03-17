@@ -8,7 +8,7 @@ class DataBase:
             dbname='postgres',
             user='postgres',
             password='postgres',
-            host='172.18.0.4',
+            host='172.18.0.2',
             port='5432'
         )
         self.cursor = self.conn.cursor()
