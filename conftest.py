@@ -55,7 +55,7 @@ def get_data_to_update_pet():
 
 
 @pytest.fixture()
-def db_cursor():
+def db_connect():
     connect = psycopg2.connect(
         dbname='postgres',
         user='postgres',
@@ -63,6 +63,5 @@ def db_cursor():
         host='172.18.0.3',
         port='5432'
     )
-    cursor = connect.cursor()
-    yield cursor
+    yield connect
     connect.close()

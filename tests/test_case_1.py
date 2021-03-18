@@ -5,7 +5,7 @@ import allure
 
 
 @allure.story("Create new user and log in as new added user")
-def test_case_1(browser, get_data_for_admin_login, get_data_for_add_user, db_cursor):
+def test_case_1(browser, get_data_for_admin_login, get_data_for_add_user, db_connect):
     with allure.step("Open app and log in as admin"):
         admin_page = AdminPage(browser)
         admin_page.open_admin_login_page()
@@ -20,8 +20,8 @@ def test_case_1(browser, get_data_for_admin_login, get_data_for_add_user, db_cur
         admin_user_page.set_staff_status_to_user()
 
     with allure.step("Check is user in db"):
-        cursor = db_cursor
-        db = DataBase(cursor)
+        connect = db_connect
+        db = DataBase(connect)
         db.is_user_in_auth_table(new_username)
 
     with allure.step("Log in as new user"):
