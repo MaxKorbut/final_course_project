@@ -60,7 +60,7 @@ def db_connect():
         dbname='postgres',
         user='postgres',
         password='postgres',
-        host='172.18.0.2',
+        host='172.18.0.3',
         port='5432'
     )
     yield connect
