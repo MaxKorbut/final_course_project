@@ -3,7 +3,7 @@ import allure
 
 
 @allure.story("Delete first created post")
-def test_case_2(browser, get_data_for_admin_login):
+def test_delete_first_created_post(browser, get_data_for_admin_login):
     with allure.step("Open app and log in as admin"):
         posts_page = PostsAdminPage(browser)
         first_created_post_src_before_delete = posts_page.get_last_post_src()

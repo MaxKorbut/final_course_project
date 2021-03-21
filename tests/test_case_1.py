@@ -5,7 +5,7 @@ import allure
 
 
 @allure.story("Create new user and log in as new added user")
-def test_case_1(browser, get_data_for_admin_login, get_data_for_add_user, db_connect):
+def test_create_new_user(browser, get_data_for_admin_login, get_data_for_add_user, db_connect):
     with allure.step("Open app and log in as admin"):
         admin_page = AdminPage(browser)
         admin_page.open_admin_login_page()

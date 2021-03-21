@@ -3,7 +3,7 @@ import allure
 
 
 @allure.story("Add new pet and update his name")
-def test_case_api(get_data_to_add_pet, get_data_to_update_pet):
+def test_add_pet_update_his_name(get_data_to_add_pet, get_data_to_update_pet):
     with allure.step("Add new pet"):
         new_pet_json = get_data_to_add_pet
         pet_page = PetApiPage()
